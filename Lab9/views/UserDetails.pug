@@ -1,0 +1,33 @@
+doctype html
+head
+    meta(charset='utf-8')
+    title Pug Assignment
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel='stylesheet' type='text/css' href='/css/sourcesanspro-font.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(href='/css/sweetalert2.css' rel='stylesheet')
+    script(src='https://cdn.jsdelivr.net/npm/sweetalert2@8')
+    script(src='sweetalert2.all.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/promise-polyfill')
+
+body(onload='sweetalert()')
+    .page-content
+        .form-v8-content
+            .form-left
+            .form-right
+                form.form-detail(action='#' method='post')
+                    #sign-up.tabcontent
+                        h2 Cookie details
+                            p Full name: #{' '+user.full_name}
+                            p Email: #{' '+user.your_email}
+                            p Password: #{' '+user.password}
+
+    script.
+        function sweetalert(){
+            Swal.fire({
+                title: 'Logged In Successfully',
+                type: 'success',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
